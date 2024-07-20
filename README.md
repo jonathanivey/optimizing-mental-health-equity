@@ -49,7 +49,7 @@ To measure our demand (i.e., mental distress), I used the Places 2022: Local Dat
 
 I use a measure of mental distress from this dataset that indicates the proportion of a population that has had poor mental health for greater than or equal to 14 days during the past 30 days. This is a self-reported measure that presents certain methodological limitations; however, this dataset is widely used in mental health research, and I believe it provides the best estimate of mental health demand for this use case.
 
-In the model, this data is aggregated by core-based statistical areas(CBSAs) provided by the U.S. Census. We then multiply the proportion of mental distress measured in the health study by the total population of each area to populate our $d_i$ parameter for mental health service demand. Because we are only using demand to ensure equitable distribution of healthcare, the precise interpretation of demand is not as relevant as having a consistent measure of need for mental healthcare across the United States. 
+In the model, this data is aggregated by core-based statistical areas (CBSAs) provided by the U.S. Census. We then multiply the proportion of mental distress measured in the health study by the total population of each area to populate our $d_i$ parameter for mental health service demand. Because we are only using demand to ensure equitable distribution of healthcare, the precise interpretation of demand is not as relevant as having a consistent measure of need for mental healthcare across the United States. 
 
 
 ### Occupation Data
@@ -62,7 +62,7 @@ From this dataset, we use a measure of the total number of mental health counsel
 
 To populate the parameter for cost, I used the following formula:
 
-$c_{ij} = $ (# of years we want to incentivize work for) $*$ (non-negative difference in income between region $i$ and region $j$) $+$ (constant incentive cost)
+$c_{ij} =$ (# of years we want to incentivize work for) $*$ (non-negative difference in income between region $i$ and region $j$) $+$ (constant incentive cost)
 
 To calculate the non-negative difference in income, I used the median income of counselors for different regions from the BLS dataset. However, for the other portions of this calculation, we need certain assumptions. First, we need to determine the number of years that we want to incentivize work for. For our initial model, I chose 5 years. Additionally, we needed to decide on a constant incentive cost. This value would be highly dependent on the operation that wants to implement this model, but for our purposes, I chose $10,000.
 
